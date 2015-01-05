@@ -1,0 +1,159 @@
+<link href="../../../public/stylesheets/main.css" rel="stylesheet" type="text/css" />
+#{extends 'layout.html' /}
+
+
+
+<div id="leftHomePage" class="lawHeader">
+<table width="100%" border="0" class="noBorder">
+  <tr>
+    <td width="51%" align="left" valign="top" class="noBorder">  <p>jakwybudowac.pl<br />
+  <span class="normalText">ul. Chrobrego 17b/8	<br />
+  81-756 Sopot<br />
+  NIP: 584 253 46 96<br />
+  <span class="normalText textColorBlue">[t]: </span>+48 504 780 420 <br />
+  </span><span class="normalText textColorBlue">[@]</span><span class="normalText"> <a href="mailto:biuro@jakwybudowac.pl">biuro@jakwybudowac.pl</a></span></p>
+
+  <form action="@{Contact.sendContactMail()}" method="GET">
+    <p>Imię
+      i nazwisko<br />
+      <input type="text" name="name" style="width:280px" />  
+      &nbsp;&nbsp;</p>
+    <p>E-mail<br />
+      <input type="text" name="email" style="width:280px" />  &nbsp;&nbsp;</p>
+  </td>
+    <td width="49%" align="center" valign="top" class="noBorder"><span class="normalText"><br />
+      <br />
+      <img src=@{'/public/images/mapa_kontakt.jpg'} width="217" height="157" /></span></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left" valign="top" class="noBorder"><p>Wiadomość<br />
+      <TEXTAREA NAME="message" style="width:480px;height:150px" ></TEXTAREA>
+      <p>
+        <input type="submit" value="Wyślij" /> 
+        <br />
+      </td>
+    </tr>	
+  </form>
+</table>
+
+       
+
+</div>
+    
+	<div id="regulations">
+	  <div id="regulationsHeader">Przepisy wchodz&#261;ce w &#380;ycie:</div>
+			<div id="regulationsText">
+			<p class="normalText"><a href="@{NewRegulations.pb()}">1.01.2012 Prawo budowlane </a></p>
+
+			<p class="normalText"><a href="@{NewRegulations.kpa()}">7.03.2012 Kodeks postępowania administracyjnego</a></p>
+            <p class="normalText"><a href="@{NewRegulations.srodowisko()}">1.01.2012 Ustawa o udostępnianiu informacji o środowisku i jego ochronie, udziale społeczeństwa w ochronie środowiska oraz o ocenach oddziaływania na środowisko
+           
+      </a></div>
+</div>
+    <div id="calculator">
+		<div id="calculatorHeader">Kalkulator:</div>
+		<div id="calculatorText">
+
+			<p class="normalText">
+			pow. działki<br />
+			<input type="text" id="pow" size="2" onkeyup="countArea()"/>
+            <select name="area" id="powArea" onchange="changePowArea()">
+			  <option value="m">m</option>
+			  <option value="ha">ha</option>
+			  </select>
+		  </p>
+			<p class="normalText">
+			pow. biol. czynna:<br />
+			<input type="text" id="biol" size="1" onkeyup="countArea()"/>
+			(%)</p>
+            <p class="normalText ">
+			<strong>pow. zabudowy i nawierzchni utwardzonej wynosi</strong>:<br />
+			<input type="text" id="result" size="3"/>
+			<select name="area" id="area" onchange="changeArea()">
+			  <option value="m">m</option>
+			  <option value="ha">ha</option>
+			  </select>
+            </p>
+            <p class="normalText normalTextSmall">Powierzchnia biologicznie czynna wynosi min. 25%. Dokładne parametry są   określone w warunkach zabudowy lub w miejscowym planie zagospodarowania   przestrzennego</p>
+		</div>
+ </div>
+ <input type="hidden" id="de" value="${expressionsData}">
+ <input type="hidden" id="c" value="${citiesData}">
+ <input type="hidden" id="l" value="${linesData}">
+
+<script language="javascript">
+
+
+       var dataExpression = document.getElementById("de").value.split(";");
+
+$("input[name='expression']").autocomplete(dataExpression,{mustMatch: false}); 
+
+
+        var dataService =  document.getElementById("l").value.split(";");
+$("input[name='service']").autocomplete(dataService,{mustMatch: false}); 
+
+        var dataWhere = document.getElementById("c").value.split(";");
+$("input[name='where']").autocomplete(dataWhere,{mustMatch: false}); 
+
+function countArea(){
+	var pow = document.getElementById("pow").value;
+	var powBiol = document.getElementById("biol").value / 100; 
+	
+	if ( pow != "" && powBiol != ""){
+		var result = pow - (pow * powBiol);
+		if (result < 0){
+			document.getElementById("result").value = "0";		
+		} else {
+			if (document.getElementById("area").value == "m"){
+				document.getElementById("result").value = result;		
+			} else {
+				document.getElementById("result").value = result / 10000;		
+			}
+
+		}
+		
+	}
+
+	
+}
+
+function changeArea(){
+	
+	var value = document.getElementById("area").value;
+	var result = "";
+	if ( value == "m"){
+
+			result = document.getElementById("result").value;
+			result = result * 10000;
+   		    document.getElementById("result").value = result;		
+
+	} else if (value == "ha"){
+		result = document.getElementById("result").value;
+		result = result / 10000;
+   	    document.getElementById("result").value = result;		
+	}
+	
+
+}
+
+function changePowArea(){
+	
+	var value = document.getElementById("powArea").value;
+	var result = "";
+	if ( value == "m"){
+
+			result = document.getElementById("result").value;
+			result = result / 10000;
+   		    document.getElementById("result").value = result;		
+
+	} else if (value == "ha"){
+		result = document.getElementById("result").value;
+		result = result * 10000;
+   	    document.getElementById("result").value = result;		
+	}
+	
+
+}
+        </script>
+
+ 

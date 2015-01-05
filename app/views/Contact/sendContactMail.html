@@ -1,0 +1,11 @@
+<link href="../../../public/stylesheets/main.css" rel="stylesheet" type="text/css" />
+<div class="normalText" id="pageContent">
+  <p>#{extends 'layout.html' /} </p>  
+  #{if (wrongEmail)}
+    <p>Wiadomość nie została wysłana. Podano zły adres email.</p>
+  #{/if}
+   #{else} 
+	  <p>Email został wysłany. </p>  
+  #{/else}
+
+</div>

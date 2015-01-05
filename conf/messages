@@ -1,0 +1,71 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+
+lawExpression = Wyr. wg Prawa
+Expressions = Wyrażenia
+Buildings = Obiekty budowlane 
+Companys = Firmy
+DictionaryColloquialExpressions = Synonimy haseł
+DictionaryColloquialExpressionsLines = Synonimy branż
+TextExpressions = Wyrażenia z worda
+Users = Użytkownicy
+
+Expression = hasło potoczne
+Building = obiekt budowlany 
+Company = firmę
+DictionaryColloquialExpression = Synonim
+DictionaryColloquialExpressionsLine = Synim
+TextExpression = wyrażenie z worda
+
+expression = Hasło potoczne
+definition = Hasło pojawiające się
+criteria = Kryteria 	
+PB = PB 	
+WTB = WTB 	
+isHeader = Czy nagłówek	
+position = Pozycja
+
+additional_info = Przydatne informacje  
+agreement = Przydatne informacje 
+law_detail = Przepisy szczegółowe
+law_other = Inne przepisy prawne
+
+companyName = Nazwa firmy 	
+city = Miejscowość
+address = Adres
+province = Województwo 	
+phone = Numer telefonu 	
+www = WWW 	
+email = E-mail 	
+line = Branża 	
+remarks = Uwagi 
+
+synonym_expression = Synonim
+additionalInformation = Przydatne informacje
+
+description = Opis z komentarzem 	
+law = Podstawa prawna
+showWtb = Pokazuj tabelę WTB
+
+indexBuildings = W indeksie budynków (tak/nie)
+indexExpressions = W indeksie wyrażeń (tak/nie)
+
+mapa_zasadnicza = mapa zasadnicza
+gestorzy = zapewnienie dostaw wody, prądu, gazu od gestorów sieci
+koncepcja_zagospodarowania = koncepcja zagospodarowania terenu
+decyzja_srodowiskowa = postępowanie w ramach wydania decyzji środowiskowej 
+wz_dlcp = decyzja o warunkach zabudowy i zagospodarowania terenu lub decyzja o lokalizacji inwestycji celu publicznego: w przypadku braku planu miejscowego
+mapa_projektowa = wykonanie mapy do celów projektowych
+badania_geotechniczne = przeprowadzenie badań geotechnicznych
+warunki_przylaczeniowe = warunki przyłączeniowe do sieci elektroenergetycznej, wodnej, kanalizacyjnej, gazowej
+uzgodnienie_zjazd = uzgodnienie z zarządcą drogi - zjazd, sieci
+wylaczenie_gruntow = wyłączenie gruntów z produkcji rolnej
+wycinka_drzew = decyzja na wycinkę drzew lub krzewów
+pozwolenie_wodnoprawne = pozwolenie wodnoprawne-prawomocne
+projekt_wielobranzowy = projekt budowlany wielobranżowy
+uzgodnienie_konserwator = pozwolenie od konserwatora zabytków: strefa ochrony konserwatorskiej lub archeologicznej
+uzgodnienie_zudp = uzgodnienie z Z.U.D.P. (Zespół Uzgodnień Dokumentacji Projektowej)
+uzgodnienie_gestorzy = uzgodnienie projektu budowlanego z gestorami sieci / wójtem, burmistrzem lub prezydentem miasta
+uzgodnienie_rzeczoznawcy = uzgodnienie projektu wielobranżowego z rzeczoznawcami
+pozwolenie_budowa = pozwolenie na budowę-prawomocne

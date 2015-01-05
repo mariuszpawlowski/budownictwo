@@ -1,0 +1,322 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.mainPage{
+	width: 1150px;
+	background-color:#cae1f3; 
+	layer-background-color:#cae1f3;
+	margin: auto auto auto auto;
+	height: auto !important;
+  	height: 600px; /* IE */
+
+}
+
+#header {
+	width: 1063px;
+  	height: 168px;
+  	background-image: url(../../public/images/header.jpg);  
+  	position: relative; 
+	display:block;
+	text-indent:-9999px;
+  	left: 40px;
+}
+
+#left {
+  	float: left;
+  	width: 189px;
+  	height: auto !important;
+  	height: 640px; /* IE */
+  	min-height: 640px;
+  	padding-right: 15px;
+  	background-color:white;
+  	top: 16px; 
+  	left: 16px;
+  	border-style: solid; 
+  	border-width: 1px;
+  	border-color: #d2d2d2;  
+  	display:block;
+}
+
+#leftHeader {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 16pt;
+	font-weight: bold;
+	text-align:center;
+	background-color:#f5f4f4;
+	width:204px;
+	height:30px;
+}
+
+#leftMenu {
+	
+}
+
+#leftTags {
+	width:204px;
+	height:328px;
+	border-top-style: solid; 
+  	border-top-width: 1px;
+  	border-top-color: #d2d2d2;
+	
+
+
+}
+
+#content{
+  	float: left;
+  	width: 1043px;
+  	height: auto !important;
+  	height: 640px; /* IE */
+  	min-height: 640px;
+  	display: inline;
+  	background-color:white;
+
+  	margin-left:40px;
+	  	padding-bottom:16px;
+  	margin-right:16px;
+
+ 	padding-left:10px;
+ 	padding-right:10px;
+ 	padding-top:10px;
+	top:-16px;
+
+}
+
+#comment{
+  	position: relative; 
+  	background-color:blue;
+
+}
+
+#leftHomePage {
+  	float: left;
+  	width: 568px;
+  	height: auto !important;
+  	height: 620px; /* IE */
+  	min-height: 620px;
+  	display: inline;
+  	position: absolute; 
+  	top: 0px; 
+  	left: 0px;
+   	border-style: solid; 
+  	border-width: 1px;
+  	border-color: #d2d2d2;
+  	padding: 10px;
+	text-align:center;
+
+}
+
+#pageContent {
+ 	border-style: solid; 
+  	border-width: 1px;
+  	border-color: #d2d2d2;
+  	padding: 10px;
+  	position: relative; 
+  	top: 0x; 
+    height: auto !important;
+  	height: 450px; /* IE */
+  	min-height: 450px;
+	text-align:left;
+	vertical-align:top;
+}
+
+#pageContentUstawa {
+ 	border-style: solid; 
+  	border-width: 1px;
+  	border-color: #d2d2d2;
+  	padding: 10px;
+  	position: relative; 
+  	top: -16px; 
+}
+
+#regulations {
+  	position: absolute; 
+  	top: 0px; 
+  	left: 599px;
+  	width: 227px;
+  	height: auto !important;
+  	height: 300px; /* IE */
+  	min-height: 300px;
+  	border-style: solid; 
+  	border-width: 1px;
+  	border-color: #d2d2d2;
+
+}
+
+#regulationsHeader {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align:center;
+    vertical-align: middle;
+	background-color:#f5f4f4;
+	width:227px;
+	height:30px;
+	vertical-align : middle; 
+	display : table-cell;
+}
+
+#regulationsText {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+#calculatorText {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+#calculatorHeader {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align:center;
+	background-color:#f5f4f4;
+	width:227px;
+	height:30px;
+	vertical-align : middle; 
+	display : table-cell;	
+}
+
+#calculator{
+  	position: absolute; 
+  	top: 315px; 
+  	left: 599px;
+  	width: 227px;
+  	height: auto !important;
+  	height: 315px; /* IE */
+  	min-height: 325px;
+  	display: inline;
+  	border-style: solid; 
+  	border-width: 1px;
+  	border-color: #d2d2d2;
+}
+
+#middle {
+  	float: left;
+  	width: 828px;
+  	height: auto !important;
+  	height: 570px; /* IE */
+  	min-height: 570px;
+  	display: inline;
+  	position: relative; 
+  	top: 0px; 
+  	left: 8px;
+  	background-color:white;
+}
+
+#footer {
+
+padding-left:40px;
+ 	left: 170px;
+  	clear: both;
+   	height: 24px;
+padding-right:47px;
+	top:-32px;
+	  	width:10x;
+}
+#footerInside {
+	background-image: url(../../public/images/footer_bkg.jpg);  
+  	width:10x;
+   	height: 23px;
+	
+}
+
+#expression {
+	position:relative;
+	width:680x;
+	top:0px;
+	left:0px;
+	text-align:center;
+}
+
+#line{
+	position:relative;
+
+	top:100%;
+	left:0px;
+	text-align:center;
+	height: auto !important;
+}
+
+<!-- company search -->
+
+#company{
+
+
+	top:100%;
+	left:0px;
+	text-align:center;
+  	height: auto !important;
+  	height: 350px; /* IE */
+  	min-height: 350px;
+  	display: inline;
+}
+
+#service{
+	position:absolute;
+	top:240px;
+	left:0px;
+	width:225px;
+}
+
+#serviceInput{
+	position:absolute;
+	top:270px;
+	left:0px;
+	width:300px;
+}
+
+
+#where{
+	position:absolute;
+	top:240px;
+	left:260px;
+	width:225px;
+}
+
+#whereInput{
+	position:absolute;
+	top:270px;
+	left:310px;
+	width:280px;
+	
+}
+
+#searchCompanyButton{
+	position:absolute;
+	top:365px;
+	left:240px;
+	width:100px;
+}
+
+#line{
+	position:absolute;
+	top:370px;
+	left:65px;
+	width:600px;
+	text-align:left;
+}
+
+#searchLineButton{
+	position:absolute;
+	top:470px;
+	left:300px;
+	width:100px;
+}
+
+
+.inputText{
+	width:200px;
+
+}
+
+.inputExpression{
+	width:450px;
+
+}

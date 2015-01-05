@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/budownictwo/!svn/ver/5/db/migrate/db1
+END
+1.up.create_user.sql
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/budownictwo/!svn/ver/5/db/migrate/db1/1.up.create_user.sql
+END

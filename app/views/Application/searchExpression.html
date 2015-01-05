@@ -1,0 +1,150 @@
+<link href="../../../public/stylesheets/main.css" rel="stylesheet" type="text/css" />
+#{extends 'layout.html' /}
+
+
+	<div id="pageContent">
+<p><span class="normalText">Wyniki wyszukiwania dla <b>${expression}</b></span>
+  #{if ( resultExpression.size > 0)}
+  <br />
+  <br/>
+  <a id="displayText" class="normalText" href="javascript:toggle();">Ukryj menu</a>
+  <br/>
+
+<p class="normalText"><div name="toParse" id="toParse"><span class="normalText">${resultExpressionDefinition.raw()}</span></div> </p>
+<table id="result_table" cellspacing="2px" cellpadding="2px" >
+
+	<thead>
+	<tr>
+
+		<th class="tableHeader" style="width:30%; background-color:#cae1f3">Opis z komentarzem</th>
+		<th class="tableHeader" style="width:40%; background-color:#cae1f3">Podstawa prawna</th> 
+		<th class="tableHeader" style="width:30%; background-color:#cae1f3">Przydatne informacje</th>
+	</tr>
+	</thead>
+	<tbody>
+	#{list items:resultExpression, as:'expression'}
+    <tr >
+		<td class="tableRow alignTop"><div name="toParse" id="toParse">${expression.description.raw()}</div></td>
+        <td class="tableRow alignTop"><div name="toParse" id="toParse">${expression.law.raw()}</div></td>
+ 		<td class="tableRow alignTop"><div name="toParse" id="toParse">${expression.additionalInformation.raw()}</div></td>
+	</tr>
+	#{/list}
+	
+	</tbody>
+</table>
+#{/if}
+
+
+#{if ( resultBuilding.size > 0)}
+
+<br />
+<br/>
+<!-- <a id="displayText" class="normalText" href="javascript:toggle();">Ukryj menu</a> 
+<br/><br />-->
+
+<div name="toParse" id="toParse"><p class="normalText">${resultBuildingDefinition.raw()} </span></p></div>
+<table id="result_table" cellspacing="2px" cellpadding="2px" >
+
+	<thead>
+	<tr>
+		<th class="tableHeader" style="width:250px; background-color:#cae1f3">Prawo budowlane </th> 
+
+		<th class="tableHeader" style="width:300px; background-color:#cae1f3">Inne przepisy prawne</th>
+		<th class="tableHeader" style="width:250px; background-color:#cae1f3">Przydatne informacje</th>
+	</tr>
+	</thead>
+	<tbody>
+	#{list items:resultBuildingMap, as:'mapElement'}
+
+
+
+	 <tr class="parent" id="${mapElement.key}">
+   
+    <td class="tableRow noTopBorder alignTop"><div name="toParse" id="toParse">${mapElement.value.get(0).PB.raw()}</div></td>
+
+ 
+
+		<td class="tableRow noTopBorder alignTop"><div name="toParse" id="toParse">${mapElement.value.get(0).law_other.raw()}</div></td>
+		<td class="tableRow noTopBorder alignTop"><div name="toParse" id="toParse">${mapElement.value.get(0).additional_info.raw()}</div></td>
+	%{ mapElement.value.remove(0) }%
+		
+	</tr>
+	
+		#{list items:mapElement.value, as:'childElement'}
+		<tr id="child" class="child-${mapElement.key}">
+			<td class="tableRow noTopBorder alignTop"><div name="toParse" id="toParse">${mapElement.value.get(0).PB.raw()}</div></td>
+
+			<td class="noTopBorder alignTop"><div name="toParse" id="toParse">${childElement.law_other.raw()}</div></td>
+			<td class="noTopBorder alignTop"><div name="toParse" id="toParse">${childElement.additional_info.raw()}</div></td>
+    	</tr>			
+		#{/list}	
+
+	#{/list}
+	
+	</tbody>
+	</table>
+    
+    <br/>
+    <!-- second table -->
+	#{if showWtb }
+        <table id="result_table" cellspacing="2px" cellpadding="2px" >
+        <thead>
+        <tr>
+          <th class="tableHeader" style="width:800px; background-color:#cae1f3">Warunki techniczne </th>
+        </tr>
+        </thead>
+        <tbody>
+        #{list items:resultBuildingMapCopy, as:'mapElement'}
+         <tr class="parent" id="${mapElement.key}">
+            #{if ( mapElement.value.size() > 1)}
+                <td id="wtb" class="tableRow bold alignTop"><div name="toParse" id="toParse">${mapElement.value.get(0).WTB.raw()}</div></td>    
+            #{/if}
+            #{else}
+                <td class="tableRow alignTop"><div name="toParse" id="toParse">${mapElement.value.get(0).WTB.raw()}</div></td>    
+            #{/else}
+        %{ mapElement.value.remove(0) }%
+        </tr>
+            #{list items:mapElement.value, as:'childElement'}
+            <tr id="child" class="child-${mapElement.key}">
+            <td class="tableRow"><div name="toParse" id="toParse">${childElement.WTB.raw()}</div></td>
+            </tr>			
+            #{/list}	
+        #{/list}
+        </tbody>
+        </table>
+	#{/if}
+#{/if}
+    
+#{if ( resultTextExpressionDefinition) }
+    <br />
+	<p class="normalText"> <div class="normalText" name="toParse" id="toParse">${resultTextExpressionDefinition.raw()} </div></p>
+ 
+#{/if}
+
+#{if (!foundExpression) }
+	<p>
+		<span class="normalText"> Nie znaleziono wynik&oacute;w dla wyszukiwania. </span>
+	</p>
+    <p>#{/if} </p>
+    <p class="normalText"><a href="javascript: history.go(-1)"><< WSTECZ</a>&nbsp;</p>
+</div>   
+
+
+<script>
+    $(function() {
+	$('tr.parent')
+		.css("cursor","pointer")
+		.attr("title","Kliknij aby rozwinac/zwinac")
+		.click(function(){
+			$(this).siblings('.child-'+this.id).toggle();
+		});
+	$('.class=child-row123]').hide().children('td');
+});
+
+$('tr')
+    .filter(function() {
+        return this.id.match(/child/);
+    })
+    .hide().children('td');
+</script>
+

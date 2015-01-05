@@ -1,0 +1,157 @@
+<link href="../../../public/stylesheets/main.css" rel="stylesheet" type="text/css" />
+
+    
+    <div id="menu">
+    <ul id="browser" class="filetree">
+    
+    <li class="closed"><span class="folder"><span><a href="@{Application.index()}" class="menuLevel1">Strona główna</a></span></span></li>
+        <li class="closed"><span class="folder"><span><a href="#" class="menuLevel1">Skorowidz</a></span></span>
+	        <ul>
+            <li><span class="menuLevel2"><span><a href="@{Index.buildings()}" class="menuLevel2">Obiekty budowlane </a></span></span></li>
+                     <li><span class="menuLevel2"><span><a href="@{Index.expressions()}" class="menuLevel2">Wyrażenia </a></span></span></li>
+            </ul>
+        </li>   
+        <li class="closed"><span class="folder"><span><a href="#" class="menuLevel1">Akty prawne</a></span></span>
+		  <ul>
+			<li class="closed"><div class="menuLevel2 menuBorder">Prawo budowlane </div>
+            <ul>
+		<li><a href="@{PrawoBudowlane.chapter01()}" class="menuLevel2"><strong>Rozdział I</br> </strong>Przepisy ogólne</a></li>
+		<li><a href="@{PrawoBudowlane.chapter02()}" class="menuLevel2"><strong>Rozdział II</br> </strong>Samodzielne funkcje techniczne w budownictwie</a></li>
+      	<li><a href="@{PrawoBudowlane.chapter03()}" class="menuLevel2"><strong>Rozdział III </br></strong>Prawa i obowiązki uczestników procesu budowlanego</a></li>
+      	<li><a href="@{PrawoBudowlane.chapter04()}" class="menuLevel2"><strong>Rozdział IV </br></strong>Postępowanie poprzedzające rozpoczęcie robót budowlanych</a></li>
+      	<li><a href="@{PrawoBudowlane.chapter05()}" class="menuLevel2"><strong>Rozdział V </br></strong>Budowa i oddawanie do użytku obiektów budowlanych</a></li>
+      	<li><a href="@{PrawoBudowlane.chapter06()}" class="menuLevel2"><strong>Rozdział VI </br></strong>Utrzymanie obiektów budowlanych</a></li>
+      	<li><a href="@{PrawoBudowlane.chapter07()}" class="menuLevel2"><strong>Rozdział VII </br></strong>Katastrofa budowlana </a></li>
+      	<li><a href="@{PrawoBudowlane.chapter08()}" class="menuLevel2"><strong>Rozdział VIII </br></strong>Organy administracji architektoniczno-budowlanej i nadzoru budowlanego </a></li>
+      	<li><a href="@{PrawoBudowlane.chapter09()}" class="menuLevel2"><strong>Rozdział IX </br></strong>Przepisy karne </a></li>            
+      	<li><a href="@{PrawoBudowlane.chapter10()}" class="menuLevel2"><strong>Rozdział X </br></strong>Odpowiedzialność zawodowa w budownictwie </a></li>
+      	<li><a href="@{PrawoBudowlane.chapter11()}" class="menuLevel2"><strong>Rozdział XI </br></strong>Przepisy przejściowe i końcowe </a></li>
+      	<li><a href="@{PrawoBudowlane.chapter12()}" class="menuLevel2"><strong>Rozdział XII </br></strong>Załącznik  </a></li>  
+        <li><a href="#" class="menuLevel2"><strong>Pełen tekst ustawy </br></strong><a href=@{'/public/law/Prawo_budowlane.doc'}><img src=@{'/public/images/word.jpg'} alt="download as Word" width="16" height="16" border="0" /></a>&nbsp;<a href=@{'/public/law/Prawo_budowlane.odt'}><img src=@{'/public/images/odt.jpg'} alt="download as Open Office" width="16" height="16" border="0" /></a>&nbsp;<a href=@{'/public/law/Prawo_budowlane.pdf'}><img src=@{'/public/images/pdf_icon.gif'} alt="download as PDF" width="16" height="16" border="0" /></a>  </li>  
+		</ul>
+            </li>
+  			<li class="closed"><div class="menuLevel2 menuBorder">Warunki techniczne jakim powinny odpowiadać budynki i ich usytuowanie</div>
+	  <ul>
+			<li><span class="menuLevel2"><a href="@{WarunkiTechniczne.section1()}" class="menuLevel2"><strong>DZIAŁ I</strong> Przepisy ogólne</a></span></li>
+			<li class="closed"><span class="menuLevel2"><strong>DZIAŁ II</strong> Zabudowa i zagospodarowanie działki budowlanej </span>
+				<ul>
+			    <li><a href="@{WarunkiTechniczne.section2_chapter01()}" class="menuLevel2"><strong>Rozdział I </strong>Usytuowanie budynku</a></li>
+					<li><a href="@{WarunkiTechniczne.section2_chapter02()}" class="menuLevel2"><strong>Rozdział II </strong>Dojścia i dojazdy</a></li>
+					<li><a href="@{WarunkiTechniczne.section2_chapter03()}" class="menuLevel2"><strong>Rozdział III </strong>Miejsca postojowe dla samochodów osobowych</a></li>
+					<li><a href="@{WarunkiTechniczne.section2_chapter04()}" class="menuLevel2"><strong>Rozdział IV </strong>Miejsca gromadzenia odpadów stałych</a></li>
+					<li><a href="@{WarunkiTechniczne.section2_chapter05()}" class="menuLevel2"><strong>Rozdział V </strong>Uzbrojenie techniczne działki i odprowadzenie wód powierzchniowych </a></li>
+					<li><a href="@{WarunkiTechniczne.section2_chapter06()}" class="menuLevel2"><strong>Rozdział VI </strong>Studnie</a></li>
+                    <li><a href="@{WarunkiTechniczne.section2_chapter07()}" class="menuLevel2"><strong>Rozdział VII </strong>Zbiorniki bezodpływowe na nieczystości ciekłe</a></li>
+					<li><a href="@{WarunkiTechniczne.section2_chapter08()}" class="menuLevel2"><strong>Rozdział VIII</strong> Zieleń i urządzenia rekreacyjne</a></li>
+					<li><a href="@{WarunkiTechniczne.section2_chapter09()}" class="menuLevel2"><strong>Rozdział IX </strong>Ogrodzenia </a></li>
+				</ul>
+			</li>
+			<li class="closed"><span class="menuLevel2"><strong>DZIAŁ III</strong> Budynki i pomieszczenia</span>
+			<ul>
+	    <li><a href="@{WarunkiTechniczne.section3_chapter01()}" class="menuLevel2"><strong>Rozdział I</strong> Wymagania ogólne</a></li>
+					<li><a href="@{WarunkiTechniczne.section3_chapter02()}" class="menuLevel2"><strong>Rozdział II </strong>Oświetlenie i nasłonecznienie</a></li>
+					<li><a href="@{WarunkiTechniczne.section3_chapter03()}" class="menuLevel2"><strong>Rozdział III </strong>Wejścia do budynków i mieszkań</a></li>
+					<li><a href="@{WarunkiTechniczne.section3_chapter04()}" class="menuLevel2"><strong>Rozdział IV </strong>Schody i pochylnie</a></li>
+					<li><a href="@{WarunkiTechniczne.section3_chapter05()}" class="menuLevel2"><strong>Rozdział V </strong>Pomieszczenia przeznaczone na pobyt ludzi</a></li>
+					<li><a href="@{WarunkiTechniczne.section3_chapter06()}" class="menuLevel2"><strong>Rozdział VI </strong>Pomieszczenia higienicznosanitarne</a></li>
+					<li><a href="@{WarunkiTechniczne.section3_chapter07()}" class="menuLevel2"><strong>Rozdział VII </strong>Szczególne wymagania dotyczące mieszkań w budynkach wielorodzinnych</a></li>
+					<li><a href="@{WarunkiTechniczne.section3_chapter08()}" class="menuLevel2"><strong>Rozdział VIII </strong>Pomieszczenia techniczne i gospodarcze  </a></li>
+					<li><a href="@{WarunkiTechniczne.section3_chapter09()}" class="menuLevel2"><strong>Rozdział IX </strong>Dojścia i przejścia do urządzeń technicznych </a></li>
+                    <li><a href="@{WarunkiTechniczne.section3_chapter10()}" class="menuLevel2"><strong>Rozdział X </strong>Garaże dla samochodów osobowych  </a></li>
+                    <li><a href="@{WarunkiTechniczne.section3_chapter11()}" class="menuLevel2"><strong>Rozdział XI </strong>Szczególne wymagania dotyczące pomieszczeń inwentarskich  </a></li>
+			</ul>
+			</li> 
+			<li class="closed"><span class="menuLevel2"><strong>DZIAŁ IV</strong> Wyposażenie techniczne budynków</span>
+			<ul>
+	    <li><a href="@{WarunkiTechniczne.section4_chapter01()}" class="menuLevel2"><strong>Rozdział I</strong> Instalacje wodociąowe zimnej i ciepłej wody</a></li>
+					<li><a href="@{WarunkiTechniczne.section4_chapter02()}" class="menuLevel2"><strong>Rozdział II </strong>Kanalizacja ściekowa i deszczowa</a></li>
+					<li><a href="@{WarunkiTechniczne.section4_chapter03()}" class="menuLevel2"><strong>Rozdział III </strong>Wewnętrzne urządzenia do usuwania odpadów stałych</a></li>
+                    <li><a href="@{WarunkiTechniczne.section4_chapter04()}" class="menuLevel2"><strong>Rozdział IV </strong>Instalacje ogrzewcze</a></li>
+					<li><a href="@{WarunkiTechniczne.section4_chapter05()}" class="menuLevel2"><strong>Rozdział V </strong>Przewody kominowe</a></li>
+					<li><a href="@{WarunkiTechniczne.section4_chapter06()}" class="menuLevel2"><strong>Rozdział VI </strong>Wentylacja i klimatyzacja</a></li>
+					<li><a href="@{WarunkiTechniczne.section4_chapter07()}" class="menuLevel2"><strong>Rozdział VII </strong>Instalacja gazowa na paliwa gazowe</a></li>
+					<li><a href="@{WarunkiTechniczne.section4_chapter08()}" class="menuLevel2"><strong>Rozdział VIII </strong>Instalacja elektryczna</a></li>
+					<li><a href="@{WarunkiTechniczne.section4_chapter09()}" class="menuLevel2"><strong>Rozdział IX </strong>Urządzenia dźwigowe</a></li>
+			</ul>
+			</li> 
+   		    <li class="closed"><span class="menuLevel1"><a href="@{WarunkiTechniczne.section5()}" class="menuLevel2"><strong>DZIAŁ V</strong> Bezpieczeństwo konstrukcji</a></span>	</li> 
+		    <li class="closed"><span class="menuLevel2"><strong>DZIAŁ VI</strong> Bezpieczeństwo pożarowe</span>
+			<ul>
+  					<li><a href="@{WarunkiTechniczne.section6_chapter01()}" class="menuLevel2"><strong>Rozdział I </strong>Zasady ogólne</a></li>
+					<li><a href="@{WarunkiTechniczne.section6_chapter02()}" class="menuLevel2"><strong>Rozdział II </strong>Odporność pożarowa budynków</a></li>
+					<li><a href="@{WarunkiTechniczne.section6_chapter03()}" class="menuLevel2"><strong>Rozdział III</strong>&nbsp;Strefy pożarowe i oddzielenia przeciwpożarowe </a></li>
+					<li><a href="@{WarunkiTechniczne.section6_chapter04()}" class="menuLevel2"><strong>Rozdział IV&nbsp;</strong>Drogi ewakuacyjne</a></li>
+					<li><a href="@{WarunkiTechniczne.section6_chapter05()}" class="menuLevel2"><strong>Rozdział V</strong>&nbsp;Wymagania przeciwpożarowe dla elementów wykończenia wnęrz i wyposażenia stałego</a></li>
+					<li><a href="@{WarunkiTechniczne.section6_chapter06()}" class="menuLevel2"><strong>Rozdział VI</strong>&nbsp;Wymagania przeciwpożarowe dla palenisk i instalacji</a></li>
+					<li><a href="@{WarunkiTechniczne.section6_chapter07()}" class="menuLevel2"><strong>Rozdział VII </strong>Usytuowanie budynków z uwagi na bezpieczeństwo pożarowe</a></li>
+					<li><a href="@{WarunkiTechniczne.section6_chapter08()}" class="menuLevel2"><strong>Rozdział VIII </strong>Wymagania przeciwpożarowe dla garaży</a></li>
+					<li><a href="@{WarunkiTechniczne.section6_chapter09()}" class="menuLevel2"><strong>Rozdział IX </strong>Wymagania przeciwpożarowe dla budynków inwentarskich</a></li>
+					<li><a href="@{WarunkiTechniczne.section6_chapter10()}" class="menuLevel2"><strong>Rozdział X</strong>Wymagania przeciwpożarowe dla budynków tymczasowych</a></li>
+			</ul>
+			</li>
+			<li class="closed"><span class="menuLevel2"><a href="@{WarunkiTechniczne.section7()}" class="menuLevel2"><strong>DZIAŁ VII </strong>Bezpieczeństwo użytkowania</a></span></li> 
+			<li class="closed"><span class="menuLevel2"><strong>DZIAŁ VIII</strong> Higiena i zdrowie</span>
+			<ul>
+	    <li><a href="@{WarunkiTechniczne.section8_chapter01()}" class="menuLevel2"><strong>Rozdział I</strong> Wymagania ogólne</a></li>
+					<li><a href="@{WarunkiTechniczne.section8_chapter02()}" class="menuLevel2"><strong>Rozdział II </strong>Ochrona czystości powietrza</a></li>
+					<li><a href="@{WarunkiTechniczne.section8_chapter03()}" class="menuLevel2"><strong>Rozdział III</strong> Ochrona przed promieniowaniem jonizującym i polami elektromagnetycznymi </a></li>
+					<li><a href="@{WarunkiTechniczne.section8_chapter04()}" class="menuLevel2"><strong>Rozdział IV </strong>Ochrona przed zawilgoceniem i korozją biologiczną</a></li>
+			</ul>
+			</li>
+            <li class="closed"><span class="menuLevel2"><a href="@{WarunkiTechniczne.section9()}" class="menuLevel2"><strong>DZIAŁ IX</strong> Ochrona przed hałasem i drganiami</a></span>	</li> 
+            <li class="closed"><span class="menuLevel2"><a href="@{WarunkiTechniczne.section10()}" class="menuLevel2"><strong>DZIAŁ X</strong> Oszczędność energii i izolacyjność cieplna</a></span>	</li> 
+            <li class="closed"><span class="menuLevel2"><a href="@{WarunkiTechniczne.section11()}" class="menuLevel2"><strong>DZIAŁ XI</strong> Przepisy przejściowe i końcowe</a></span></li> 
+			<li class="closed"><span class="menuLevel2"><strong>Załączniki</strong></span>
+			<ul>
+	   			 <li><a href="@{WarunkiTechniczne.attachments1()}" class="menuLevel2">Załącznik nr 1</a></li>
+					<li><a href="@{WarunkiTechniczne.attachments2()}" class="menuLevel2">Załącznik nr 2</a></li>
+					<li><a href="@{WarunkiTechniczne.attachments3()}" class="menuLevel2">Załącznik nr 3</a></li>
+			</ul>
+			</li>
+            <li class="closed"><span class="menuLevel2"><a href="#" class="menuLevel2"><strong>Pełen tekst ustawy: </br></strong> <a href=@{'/public/law/Warunki_techniczne.doc'}><img src=@{'/public/images/word.jpg'} alt="download as Word" width="16" height="16" border="0" /></a>&nbsp;<a href=@{'/public/law/Warunki_techniczne.odt'}><img src=@{'/public/images/odt.jpg'} alt="download as Open Office" width="16" height="16" border="0" /></a>&nbsp;<a href=@{'/public/law/Warunki_techniczne.pdf'}><img src=@{'/public/images/pdf_icon.gif'} alt="download as PDF" width="16" height="16" border="0" /></a></span></li> 
+		</ul>
+	</li>
+      	<li><div class="menuLevel2 menuBorder"><a href="@{'/public/law/Forma_i_zakres_projektu_budowlanego.doc'}">Forma i zakres projektu budowlanego</a></div></li>
+        
+      	<li><div class="menuLevel2 menuBorder"><a href="@{'/public/law/Drogi_publiczne.docx'}">Ustawa o drogach publicznych</a></div></li>
+        
+        <li><div class="menuLevel2 menuBorder"><a href="@{'/public/law/Kodeks_postepowania_administracyjnego.docx'}">Kodeks postępowania administracyjnego</a></div></li>
+        
+        <li><div class="menuLevel2 menuBorder"><a href="@{'/public/law/Planowanie_i_zagospodarowanie_przestrzenne.docx'}">Planowanie i zagospodarowanie przestrzenne</a></div></li>
+        
+        <li><div class="menuLevel2 menuBorder"><a href="@{'/public/law/Ustawa_o_udostepnianiu_informacji_o_srodowisku_i_jego_ochronie.docx'}">Ustawa o udostępnianiu informacji o środowisku i jego ochronie</a></div></li>
+        
+        <li><div class="menuLevel2 menuBorder menuBorderBottom"><a href="@{'/public/law/Rozporzadzenie_w_sprawie_inwestycji_znaczaco_oddzialywujacych_na_srodowisko.docx'}">Rozporządzenie w sprawie inwestycji znacząco oddziaływujących na srodowisko</a></div></li>
+        
+        
+
+		</ul>
+    </li>      
+       
+      <li class="closed"><span class="folder"><span><a href="#" class="menuLevel1">Formalności do pobrania</a></span></span>
+	    <ul>
+           <li><span class="menuLevel2"><span><a href="@{Files.index()}" class="menuLevel2">Wnioski </a></span></span></li>
+                     <li><span class="menuLevel2"><span><a href="@{Files.decisions()}" class="menuLevel2">Decyzje administracyjne </a></span></span></li>
+            </ul>
+        </li>    
+	
+<li class="closed"><span class="folder"><span><a href="#" class="menuLevel1">Procedury budowlane</a></span></span>
+	    <ul>
+           <li><span class="menuLevel2"><span><a href="/application/searchexpression?expression=procedury+budowlane+dla+inwestycji+wymagaj%C4%85cych+uzyskania+pozwolenia+na+budow%C4%99" class="menuLevel2">Pozwolenie na budowę </a></span></span></li>
+                     <li><span class="menuLevel2"><span><a href="http://mario667.linuxpl.info:8080/application/searchexpression?expression=zg%C5%82oszenie+budowlane" class="menuLevel2">Zgłoszenie budowlane </a></span></span></li>
+            </ul>
+        </li>
+        
+
+
+	<li><span class="folder"><span><a href="@{Schedule.index()}" class="menuLevel1">Harmonogram inwestycji<br />
+	  <br />
+	</a></span></span></li>
+	<li><span class="folder"><span><a href="@{Contact.index()}" class="menuLevel1">Kontakt</a></span></span></li>
+	<li><span class="folder"><span><a href="@{AboutUs.index()}" class="menuLevel1">O serwisie</a></span></span></li>
+   	<li><span class="folder"><span><a href="@{Contact.advertisement()}" class="menuLevel1">Zamieść swoje ogłoszenie</a></span></span></li>
+
+
+	</ul>
+<br/>
+</div>

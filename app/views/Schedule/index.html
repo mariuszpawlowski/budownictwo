@@ -1,0 +1,113 @@
+<link href="../../../public/stylesheets/main.css" rel="stylesheet" type="text/css" />
+<div class="normalText" id="pageContent">
+
+<p>#{extends 'layoutSchedule.html' /} <span class="lawHeader">HARMONOGRAM - dla inwestycji wymagających uzyskania pozwolenia na budowę</span></p>
+
+<p>
+<form action="@{Schedule.index()}" method="GET">
+   <p>
+     <input type="checkbox" name="mapaZasadniczaCheckBox" id="mapaZasadniczaCheckBox" >  
+     <span class="menuLevel1">mapa zasadnicza</span><br>
+     <input type="checkbox" name="zapewnienieDostawCheckBox" id="zapewnienieDostawCheckBox">  
+     <span class="menuLevel1"><a  href="/application/searchexpression?expression=warunki+przy%C5%82%C4%85czenia" target="_blank">zapewnienie dostaw wody, prądu, gazu od gestorów sieci</a></span><br>
+     <input type="checkbox" checked="checked" disabled="disabled">  
+     <span class="menuLevel1">koncepcja zagospodarowania terenu</span><br>
+     <input type="checkbox" name="srodowiskoPrawomocnaCheckBox" id="srodowiskoPrawomocnaCheckBox" >  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=decyzja+%C5%9Brodowiskowa" target="_blank">postępowanie w ramach wydania decyzji środowiskowej</a></span><br>
+     <input type="checkbox"  name="WZDLCPCheckBox" id="WZDLCPCheckBox">  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=decyzja+o+warunkach+zabudowy" target="_blank">decyzja o warunkach zabudowy i zagospodarowania terenu</a> lub <a href="/application/searchexpression?expression=decyzja+o+lokalizacji+inwestycji+celu+publicznego" target="_blank">decyzja o lokalizacji inwestycji celu publicznego</a>: w przypadku braku planu miejscowego</span><br>
+     <input type="checkbox" checked="checked" disabled="disabled">  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=mapa+do+cel%C3%B3w+projektowych" target="_blank">wykonanie mapy do celów projektowych</a></span><br>
+     
+     
+     
+     <input type="checkbox" name="badaniaGeotechniczneCheckBox" id="badaniaGeotechniczneCheckBox">  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=badanie+geotechniczne" target="_blank">przeprowadzenie badań geotechnicznych</a></span><br>
+     
+     <input type="checkbox" checked="checked" disabled="disabled">  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=warunki+przy%C5%82%C4%85czenia" target="_blank">warunki przyłączeniowe do sieci elektroenergetycznej, wodnej, kanalizacyjnej, gazowej</a></span><br>
+     
+     <input type="checkbox" name="zarzadcaDrogiZjazdCheckBox" id="zarzadcaDrogiZjazdCheckBox">  
+<span class="menuLevel1"><a href="/application/searchexpression?expression=budowa+przy+drogach+publicznych" target="_blank">uzgodnienie z zarządcą drogi - zjazd, sieci</a></span><br>
+     
+     <input type="checkbox" name="wylaczenieGruntowCheckBox" id="wylaczenieGruntowCheckBox">  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=wy%C5%82%C4%85czenie+grunt%C3%B3w+z+produkcji+rolnej" target="_blank">wyłączenie gruntów z produkcji rolnej</a></span><br>
+     
+     <input type="checkbox" name="wycinkaDrzewCheckBox" id="wycinkaDrzewCheckBox">  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=decyzja+zezwalaj%C4%85ca+na+wycink%C4%99+drzew+lub+krzew%C3%B3w" target="_blank">decyzja na wycinkę drzew lub krzewów</a></span><br>
+     
+     <input type="checkbox" name="pozwolenieWodnoprawneCheckBox" id="pozwolenieWodnoprawneCheckBox">  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=pozwolenie+wodnoprawne" target="_blank">pozwolenie wodnoprawne-prawomocne</a></span><br>
+     
+     <input type="checkbox" checked="checked" disabled="disabled">  
+     <span class="menuLevel1">projekt budowlany wielobranżowy</span><br>
+     
+     <input type="checkbox" name="uzgodnienieKonserwatorCheckBox" id="uzgodnienieKonserwatorCheckBox" >  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=strefa+ochrony+konserwatora+zabytk%C3%B3w" target="_blank">pozwolenie od konserwatora zabytków: strefa ochrony konserwatorskiej lub archeologicznej</a></span><br>
+     
+     <input type="checkbox" name="uzgodnienieZUDPCheckBox" id="uzgodnienieZUDPCheckBox" >  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=zudp" target="_blank">uzgodnienie z Z.U.D.P. (Zespół Uzgodnień Dokumentacji Projektowej)</a></span><br>
+     
+     <input type="checkbox" name="uzgodnienieGestorzyCheckBox" id="uzgodnienieGestorzyCheckBox" >  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=uzgodnienie+projektu+budowlanego+z+gestorami+sieci" target="_blank">uzgodnienie projektu budowlanego z gestorami sieci / wójtem, burmistrzem lub prezydentem miasta</a></span><br>
+     
+     
+     <input type="checkbox" checked="checked" disabled="disabled">  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=uzgodnienia+z+rzeczoznawcami+projektu+budowlanego" target="_blank">uzgodnienie projektu wielobranżowego z rzeczoznawcami</a></span><br>
+     <input type="checkbox" checked="checked" disabled="disabled">  
+     <span class="menuLevel1"><a href="/application/searchexpression?expression=pozwolenie+na+budow%C4%99" target="_blank">pozwolenie na budowę-prawomocne</a></span><br>         
+     <br />
+     <input type="submit" value="Przelicz harmonogram" />
+   </p>
+   <p><span class="upperIndex">harmonogram przedstawiony poniżej pokazuje optymalny czas realizacji danego uzgodnienia oraz moment, w którym powinno się ono zacząć i zakończyć.</span></p>
+</form>
+</p>
+<table width="780" border="1" id="harmonogram">
+  <tr class="tableHeaderNoBorder">
+    <td width="374" rowspan="2" class="tableHeader alignCenter">uzgodnienia</td>
+    <td colspan="11" class="tableHeader alignCenter">miesi&#261;ce</td>
+  </tr>
+  <tr class="tableHeader alignCenter">
+
+    <td width="30">1</td>
+    <td width="30">2</td>
+    <td width="30">3</td>
+    <td width="30">4</td>
+    <td width="30">5</td>
+    <td width="30">6</td>
+    <td width="30">7</td>
+    <td width="30">8</td>
+    <td width="30">9</td>
+    <td width="30">10</td>
+    <td width="30">11</td>
+  </tr>
+  #{list items:scheduleRows, as:'row'}
+    <tr class="tableRow" >
+    <td>${row.rowName}</td>
+    <td class="tableCellCentered">${row.month1}</td>
+    <td class="tableCellCentered">${row.month2}</td>
+    <td class="tableCellCentered">${row.month3}</td>
+    <td class="tableCellCentered">${row.month4}</td>
+    <td class="tableCellCentered">${row.month5}</td>
+    <td class="tableCellCentered">${row.month6}</td>
+    <td class="tableCellCentered">${row.month7}</td>
+    <td class="tableCellCentered">${row.month8}</td>
+    <td class="tableCellCentered">${row.month9}</td>
+    <td class="tableCellCentered">${row.month10}</td>
+    <td class="tableCellCentered">${row.month11}</td>
+  </tr>
+  #{/list}
+  
+</table>
+
+</div>
+<script language="javascript">
+
+#{list items:checkBoxSet, as:'expression'}
+document.getElementById("${expression}").checked = true;
+
+#{/list}
+
+</script>
+</body>
+</html>

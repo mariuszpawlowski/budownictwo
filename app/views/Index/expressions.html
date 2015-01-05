@@ -1,0 +1,39 @@
+<link href="../../../public/stylesheets/main.css" rel="stylesheet" type="text/css" />
+<div class="normalText" id="pageContent">
+#{extends 'layout.html' /} 
+
+  <span class="lawHeader">Skorowidz - wyrażenia</span>
+</p>
+
+#{list items:expressions, as:'expression'}
+	<p class="normalText"><a href="/application/searchexpression?expression=${expression.urlEncode().raw()}">${expression}</a></p>
+#{/list}
+</div>
+<script type="text/javascript">
+
+		var arr = new Array();
+        arr = document.getElementsByName("toParse");
+
+		for(var i = 0; i < arr.length; i++)
+        {								
+            var obj = document.getElementsByName("toParse").item(i);
+		 	var text = obj.innerHTML;
+			text = text.replace(/#B#/g,"<b>");
+    	    text = text.replace(/#\/B#/g,"</b>");
+			text = text.replace(/#U#/g,"<u>");
+    	    text = text.replace(/#\/U#/g,"</u>");
+			text = text.replace(/#BR#/g,"<br/>");
+			text = text.replace(/#S#/g,"&nbsp;");
+			text = text.replace(/#A#/g,"<a href=\"");
+			text = text.replace(/#BLANK#/g,"\"target=\"_blank\">");
+			text = text.replace(/#NOTARGET#/g,"\">");
+			text = text.replace(/#\/A#/g,"</a>");
+			
+			obj.innerHTML = text;
+
+        }
+<!--  <a href="link" target="_blank">link_text</a> #A#link#BLANK#link_text#/A# #A#link2#NOTARGET#link_text2#/A#
+-->
+	</script>
+</body>
+</html>

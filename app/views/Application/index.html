@@ -1,0 +1,180 @@
+<link href="../../../public/stylesheets/main.css" rel="stylesheet" type="text/css" />
+#{extends 'layout.html' /}
+
+
+
+<div id="leftHomePage" class="normalText">
+       
+           #{if flash.error}
+    
+        <p style="color:#c00">
+      	${flash.error}
+		</p>
+
+		#{/if}
+      <div id="expression">
+       <p><span class="normalText bold">Co chcesz wybudować lub jakiego wyrażenia szukasz</span></p>
+
+     	 <form action="@{Application.searchExpression()}" method="GET">
+          <p>
+          <input type="text" name="expression" class="inputExpression"/>  &nbsp;&nbsp;
+          <input type="submit" value="Szukaj" />
+		</form>
+          </p>
+   
+       
+        <p><span class="greyText">wyszukiwarka obejmuje obiekty budowlane i wyrażenia z prawa budowlanego oraz przepisy prawne powiązane z tematyką budowlaną</span></p>
+      <p>&nbsp;</p>
+  </div>
+
+	   <div id="company">
+
+       <form action="@{Application.searchCompany()}" method="GET">
+       	<div id="service" class="normalText bold">Us&#322;uga lub bran&#380;a:</div> 
+        <div id="where" class="normalText bold">Gdzie:</div>
+        <div id="serviceInput"> <input type="text" name="service" class="inputText"/><br/>
+        <span class="greyText lines"> wpisz branżę lub usługi powiązane z hasłami: geodeta, geolog, projektant instalacji elektrycznych, wod-kan i gaz, biuro architektoniczne</span></div>
+        <div id="whereInput"><input type="text" name="where" class="inputText"/><br/>
+        <span class="greyText">wpisz: miasto, województwo</span></br></div>
+        <div id="searchCompanyButton">
+	        &nbsp;&nbsp;<input type="submit" value="Szukaj" />
+        </div>
+        </form>
+	  </div>
+      
+
+            
+ 
+    
+</div>
+    
+	<div id="regulations">
+			<div id="regulationsHeader">Przepisy wchodz&#261;ce w &#380;ycie:</div>
+			<div id="regulationsText">
+			<p class="normalText"><a href="@{NewRegulations.pb()}">1.01.2012 Prawo budowlane </a></p>
+
+			<p class="normalText"><a href="@{NewRegulations.kpa()}">7.03.2012 Kodeks postępowania administracyjnego</a></p>
+            <p class="normalText"><a href="@{NewRegulations.srodowisko()}">1.01.2012 Ustawa o udostępnianiu informacji o środowisku i jego ochronie, udziale społeczeństwa w ochronie środowiska oraz o ocenach oddziaływania na środowisko
+           
+      </a></div>
+	</div>
+    <div id="calculator">
+		<div id="calculatorHeader">Kalkulator:</div>
+		<div id="calculatorText">
+
+			<p class="normalText">
+			pow. działki<br />
+			<input type="text" id="pow" onkeyup="countArea()" style="width:100px"/>
+            <select name="area" id="areaSwitch" onchange="changePowArea()">
+			  <option value="m">m2</option>
+			  <option value="ha">ha</option>
+			  </select>
+		  </p>
+			<p class="normalText">
+			pow. biol. czynna:<br />
+			<input type="text" id="biol" size="1" onkeyup="countArea()"/>
+			(%)</p>
+            <p class="normalText ">
+			<strong>pow. zabudowy i nawierzchni utwardzonej wynosi</strong>:<br />
+			<input type="text" id="result" style="width:100px"/>
+			<select name="area" id="resultSwitch" onchange="changeArea()">
+			  <option value="m">m2</option>
+			  <option value="ha">ha</option>
+			  </select>
+            </p>
+            <p class="normalText normalTextSmall">Powierzchnia biologicznie czynna wynosi min. 25%. Dokładne parametry są   określone w warunkach zabudowy lub w miejscowym planie zagospodarowania   przestrzennego</p>
+		</div>
+ </div>
+
+ <input type="hidden" id="de" value="${expressionsData}">
+ <input type="hidden" id="c" value="${citiesData}">
+ <input type="hidden" id="l" value="${linesData}">
+
+<script language="javascript">
+
+
+       var dataExpression = document.getElementById("de").value.split(";");
+
+$("input[name='expression']").autocomplete(dataExpression,{mustMatch: false}); 
+
+
+        var dataService =  document.getElementById("l").value.split(";");
+$("input[name='service']").autocomplete(dataService,{mustMatch: false}); 
+
+        var dataWhere = document.getElementById("c").value.split(";");
+$("input[name='where']").autocomplete(dataWhere,{mustMatch: false}); 
+
+function countArea(){
+	var pow = document.getElementById("pow").value;
+	var powBiol = document.getElementById("biol").value / 100; 
+	
+	if ( pow != "" && powBiol != ""){
+		var result = pow - (pow * powBiol);
+		if (result < 0){
+			document.getElementById("result").value = "0";		
+		} else {
+
+			if (document.getElementById("areaSwitch").value == "m"){
+				
+				if (document.getElementById("resultSwitch").value =="m"){
+					document.getElementById("result").value = result;		
+				} else {
+ 					document.getElementById("result").value = result / 10000;		
+				}
+				
+
+			} else {
+				if (document.getElementById("resultSwitch").value =="m"){
+					document.getElementById("result").value = result*10000;		
+				} else {
+ 					document.getElementById("result").value = result;		
+				}	
+			}
+
+		}
+		
+	}
+
+	
+}
+
+function changeArea(){
+	
+	var value = document.getElementById("resultSwitch").value;
+	var result = "";
+	if ( value == "m"){
+
+			result = document.getElementById("result").value;
+			result = result * 10000;
+   		    document.getElementById("result").value = result;		
+
+	} else if (value == "ha"){
+		result = document.getElementById("result").value;
+		result = result / 10000;
+   	    document.getElementById("result").value = result;		
+	}
+	
+
+}
+
+function changePowArea(){
+	
+	var value = document.getElementById("areaSwitch").value;
+	var result = "";
+	if ( value == "m"){
+
+			result = document.getElementById("result").value;
+			result = result / 10000;
+   		    document.getElementById("result").value = result;		
+
+	} else if (value == "ha"){
+		result = document.getElementById("result").value;
+		result = result * 10000;
+   	    document.getElementById("result").value = result;		
+	}
+	
+
+}
+        </script>
+
+ 
